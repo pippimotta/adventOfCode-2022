@@ -14,7 +14,7 @@ func main() {
 		fmt.Fprintln(os.Stderr, err)
 		os.Exit(1)
 	}
-	fmt.Println(max)
+	fmt.Printf("Max Calorie is %v\n", max)
 }
 func maxCal(r io.Reader) (int, error) {
 	max, elf := 0, 0
@@ -34,7 +34,6 @@ func maxCal(r io.Reader) (int, error) {
 		if max < elf {
 			max = elf
 		}
-
 	}
 	if err := scanner.Err(); err != nil {
 		return 0, err
