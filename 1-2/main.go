@@ -21,7 +21,6 @@ func main() {
 func maxThreeCal(r io.Reader) (int, error) {
 	elf := 0
 	// (´Д` )
-	var linePool []int
 	var calPool []int
 	scanner := bufio.NewScanner(r)
 
@@ -40,9 +39,8 @@ func maxThreeCal(r io.Reader) (int, error) {
 			return 0, err
 		}
 		elf += i
-		linePool = append(linePool, elf)
 	}
-	calPool = append(calPool, linePool[len(linePool)-1])
+	calPool = append(calPool, elf)
 
 	if err := scanner.Err(); err != nil {
 		return 0, err
