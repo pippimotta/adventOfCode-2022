@@ -2,13 +2,10 @@ package main
 
 import (
 	"bufio"
-	_ "embed"
 	"fmt"
 	"io"
 	"os"
 )
-
-var input string
 
 func main() {
 	sum, err := sumScore(os.Stdin)
@@ -32,7 +29,7 @@ func sumScore(r io.Reader) (int, error) {
 	return sum, nil
 }
 
-// not sure who is the computer(´Д` )
+// not sure who is the real computer(´Д` )
 func judge(s string) int {
 	switch s {
 	case "A X":
