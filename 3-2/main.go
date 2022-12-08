@@ -45,7 +45,7 @@ func getPrimeItem(input string) []string {
 	var primeItem []string
 	items := strings.Split(input, "\n")
 
-	for i := 0; i < len(items); i += 3 {
+	for i := 0; i < len(items); i += groupNumber {
 		second, third := checkMap(items[i+1]), checkMap(items[i+2])
 		for _, letter := range strings.Split(items[i], "") {
 			if second[letter] && third[letter] {
