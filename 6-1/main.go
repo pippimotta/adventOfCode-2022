@@ -31,19 +31,16 @@ func (s set) Len() int {
 func main() {
 	var existMap = set{}
 	message := strings.Split(input, "")
-	window := ""
 	l, counter := 0, 0
 
 	for r := 0; r < len(message); r++ {
-		window += message[r]
 		counter++
 		for existMap.Contains(message[r]) {
 			existMap.Remove(message[l])
 			l++
-			window = window[1:]
 		}
 		existMap.Add(message[r])
-		if existMap.Len() == 14 { //14 for part2
+		if existMap.Len() == 4 { //14 for part2
 			fmt.Printf("%d characters need to be processed\n", counter)
 			break
 		}
